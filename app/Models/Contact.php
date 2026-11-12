@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Contact extends Model
 {
     use HasFactory;
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    } 
+    // Enable mass assignment for the following fields
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'phone',
+        'email',
+        'address',
+        'company_id'
+    ];
 }

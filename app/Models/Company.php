@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Company extends Model
+{
+    use HasFactory;
+    public function contacts()
+    {
+        return $this->hasMany(Contact::class);
+    }
+    // Enable mass assignment for the following fields
+    protected $fillable = [
+        'name',
+        'address',
+        'website',
+        'email' 
+    ];
+}
