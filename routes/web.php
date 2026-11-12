@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+
+Route::resource('contacts', ContactController::class);
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::resource('contacts', ContactController::class);
 
 Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
 
